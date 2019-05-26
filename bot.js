@@ -7,7 +7,7 @@ client.on('ready', () => {
   console.log(` Servers ${client.guilds.size}`);
 });
 
- const developers = ["507997411101114379"]
+ const developers = ["441584713799303183"]
 client.on('message', message => {
     var argresult = message.content.split(` `).slice(1).join(' ');
       if (!developers.includes(message.author.id)) return;
