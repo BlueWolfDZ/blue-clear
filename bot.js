@@ -7,24 +7,6 @@ client.on('ready', () => {
   console.log(` Servers ${client.guilds.size}`);
 });
 
- const developers = ["507997411101114379"]
-client.on('message', message => {
-    var argresult = message.content.split(` `).slice(1).join(' ');
-      if (!developers.includes(message.author.id)) return;
-      
-  if (message.content.startsWith(adminprefix + 'p')) {
-    client.user.setGame(argresult);
-      message.channel.send(`**Done ${argresult}**`)
-  } else 
-  if (message.content.startsWith(adminprefix + 'offline')) {
-  client.user.setStatus("offline");
-      message.channel.send(`**Done**`)
-} else
-if (message.content.startsWith(adminprefix + 'setava')) {
-  client.user.setAvatar(argresult);
-    message.channel.send(`Changing The Avatar To :**${argresult}** `);
-}
-});
 
 client.on('message', async message => {
 
@@ -44,5 +26,6 @@ client.on('message', async message => {
 	message.channel.send(`${messagecount} : عدد الرسائل التي تم مسحها`, {code: 'js'}).then(m => m.delete(3000));
 	};
 });
+
 
 client.login(process.env.LIGHT);
